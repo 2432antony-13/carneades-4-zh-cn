@@ -1,6 +1,6 @@
-# Carneades 4 简体中文本地化
+# Carneades 4 中国证据论证研究版
 
-本仓库是 [Carneades 4](https://github.com/carneades/carneades-4) 的非官方简体中文本地化分支。Carneades 是一个使用 Go 实现的计算论证系统，可以评估和可视化结构化论证图，也可以计算 Dung 抽象论证框架的扩展。
+本仓库是 [Carneades 4](https://github.com/carneades/carneades-4) 的非官方简体中文研究分支。它不是逐句翻译，而是在保留上游可废止论证内核的基础上，研究适用于中国证据推理的 CLES-MoE 专家路由、事实账本和可审计论证架构。
 
 ## 项目边界
 
@@ -9,6 +9,7 @@
 - 本项目不隶属于 Carneades 原作者或 Fraunhofer FOKUS。
 - 本项目是研究与教学工具，不提供自动裁判或法律意见。
 - 软件标签和权重是形式模型的计算结果，不等同于中国法上的事实认定或证明标准。
+- 当前仓库尚未训练参数级神经 MoE；现阶段提供的是研究架构、中文语境适配和符号原型。
 
 ## 已完成的中文化
 
@@ -18,6 +19,7 @@
 - 中文 YAML 论证图示例；
 - 中文文本 YAML 导入导出测试；
 - 来源、许可和原创性记录。
+- 中国证据推理 MoE 研究报告、来源台账和工程架构。
 
 ## 快速运行
 
@@ -46,6 +48,9 @@ go build -o bin/carneades ./src/cmd/carneades
 - [来源、许可与原创性记录](docs/zh-CN/来源与许可.md)
 - [汉化范围与未完成事项](docs/zh-CN/汉化范围.md)
 - [两日交付清单](docs/zh-CN/两日交付清单.md)
+- [CLES-MoE 中国证据推理架构](docs/zh-CN/中国证据推理架构.md)
+- [中国证据推理 MoE 架构研究报告](research/zh-CN/中国证据推理MoE架构研究报告.md)
+- [研究来源台账](research/zh-CN/研究来源台账.md)
 
 ## 中文示例
 

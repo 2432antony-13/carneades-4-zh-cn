@@ -10,12 +10,13 @@
 </head>
 <body>
 <div data-role="page" id="EvalForm">
-  <div data-role="header"><h1>评估结构化论证图</h1></div>
+  <div data-role="header"><h1>评估证据论证图</h1></div>
   <div role="main" class="ui-content">
-    <p>上传结构化论证图，系统将依据图中前提、论证、争点和证明标准进行评估，并按所选格式输出。</p>
+    <p>上传已经完成来源绑定和事实核验的结构化论证图。系统只计算图中明示的前提、攻击、争点和形式标准，不会判断上传材料是否真实。</p>
+    <p><strong>事实门：</strong>模型抽取的候选事实、当事人主张和未知事实不得放入 <code>assumptions</code>。只有经人工核验并留有来源定位的教学输入才能暂时进入计算。</p>
     <p>初次使用建议选择
       <a href="https://github.com/2432antony-13/carneades-4-zh-cn/tree/master/examples/AGs/YAML">YAML 示例</a>。
-      中文教学示例位于 `examples/AGs/YAML/zh-CN`。详细说明见
+      中国证据推理研究示例位于 <code>examples/AGs/YAML/zh-CN</code>。详细说明见
       <a href="/carneades/eval-help">帮助页</a>。</p>
     <form action="/carneades/eval" enctype="multipart/form-data" target="_blank" data-ajax="false" method="post">
       <label for="datafile">论证图文件：</label>
@@ -36,7 +37,7 @@
         <input name="output-format" id="svg" value="svg" checked="checked" type="radio"><label for="svg">SVG</label>
         <input name="output-format" id="yamlo" value="yaml" type="radio"><label for="yamlo">YAML</label>
       </fieldset>
-      <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-eval">开始评估</button>
+      <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-eval">运行形式评估</button>
     </form>
   </div>
   <div data-role="footer" data-id="main-footer" data-position="fixed">

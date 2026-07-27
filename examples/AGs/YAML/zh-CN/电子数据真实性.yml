@@ -1,33 +1,82 @@
 meta:
-  title: 电子数据真实性教学示例
+  title: CLES-MoE 中国民事电子数据真实性研究示例
+  jurisdiction: CN
+  procedure: civil
+  routed_experts: S0,E1,E3,E6,S1
+  proof_standard_status: PE仅为上游计算占位，不等同中国民事高度可能性
   note: >
-    本例仅用于测试中文文本和论证图结构，不对应真实案件，
-    也不构成对电子数据真实性的法律意见。
+    本例根据中国民事电子数据真实性审查因素独立编写，仅用于测试中文文本、
+    事实门和论证图结构。assumptions 中的项目表示在合成教学环境中已经人工核验的输入，
+    不是由模型推测的事实，也不构成法律推定或法律意见。
+
+references:
+  cn_civil_evidence_rules:
+    title: 最高人民法院关于民事诉讼证据的若干规定
+    url: https://www.court.gov.cn/zixun/xiangqing/212721.html
+  cn_online_litigation_rules:
+    title: 人民法院在线诉讼规则
+    url: https://www.court.gov.cn/fabu/xiangqing/309551.html
 
 statements:
   original_device_available: 已提交生成相关聊天记录的原始设备。
+  source_identified: 已记录该组电子数据的具体来源和形成主体。
+  collection_reproducible: 收集、提取和核验过程可以重现。
   hash_consistent: 提取文件的哈希值与核验记录一致。
+  system_operated_normally: 相关系统在数据形成、存储和传输期间正常运行。
   editing_trace_found: 现有检查发现了无法合理解释的编辑痕迹。
+  source_or_collection_defect: 数据来源或收集过程存在足以削弱推论的缺陷。
   authentic: 该组聊天记录在本教学模型中获得真实性支持。
   not_authentic: 该组聊天记录在本教学模型中未获得真实性支持。
 
 issues:
   authenticity:
+    meta:
+      legal_note: PE是计算占位，正式研究版需实现中国民事证明标准插件
     positions: [authentic, not_authentic]
     standard: PE
 
 arguments:
   support_authenticity:
+    meta:
+      routed_expert: E3_electronic_data
+      source: cn_civil_evidence_rules
     conclusion: authentic
-    premises: [original_device_available, hash_consistent]
+    premises:
+      - original_device_available
+      - source_identified
+      - collection_reproducible
+      - hash_consistent
+      - system_operated_normally
+    undercutter: source_or_collection_defect
   challenge_authenticity:
+    meta:
+      routed_expert: E3_electronic_data
+      source: cn_civil_evidence_rules
     conclusion: not_authentic
+    premises: [editing_trace_found]
+  undercut_support:
+    meta:
+      routed_expert: E6_corroboration_and_alternatives
+      note: 攻击的是从核验因素到真实性结论的推论连接
+    conclusion: source_or_collection_defect
     premises: [editing_trace_found]
 
 assumptions:
   - original_device_available
+  - source_identified
+  - collection_reproducible
   - hash_consistent
+  - system_operated_normally
 
 tests:
-  in: [original_device_available, hash_consistent, authentic]
-  out: [editing_trace_found, not_authentic]
+  in:
+    - original_device_available
+    - source_identified
+    - collection_reproducible
+    - hash_consistent
+    - system_operated_normally
+    - authentic
+  out:
+    - editing_trace_found
+    - source_or_collection_defect
+    - not_authentic
