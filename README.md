@@ -2,6 +2,12 @@
 These are the source files of Version 4 of the
 Carneades argumentation system, written in the Go programming language.
 
+[简体中文说明](README.zh-CN.md)
+
+> This fork adds an independent Simplified Chinese localization. It is not an
+> official release of the Carneades authors or Fraunhofer FOKUS. The original
+> project history and MPL-2.0 license are preserved.
+
 This source code is subject to the terms of the Mozilla Public
 License, version 2.0 (MPL-2.0). If a copy of the MPL was not
 distributed with this software, it is also available online at
@@ -28,4 +34,3 @@ announcements about the further development of this version.
 
 See the INSTALL.md file in the same directory as this README for
 installation instructions.
-

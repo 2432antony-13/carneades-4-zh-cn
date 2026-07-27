@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades {{.Version}} 中文版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="mainPage">
+  <div data-role="header"><h1>Carneades {{.Version}} 中文版</h1></div>
+  <div role="main" class="ui-content">
+    <p>计算、评估并可视化结构化论证。本地化版本用于研究、教学和论证辅助，不提供自动裁判或法律意见。</p>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="/carneades/eval-form">评估结构化论证图</a></li>
+      <li><a href="/carneades/dung-form">计算 Dung 抽象论证框架扩展</a></li>
+    </ul>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" class="ui-btn-active" data-icon="home">首页</a></li>
+      <li><a href="/carneades/help" data-icon="info">帮助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隐私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">声明</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>

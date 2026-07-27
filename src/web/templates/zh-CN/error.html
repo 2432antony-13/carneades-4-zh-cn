@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades 错误信息</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="errorPage">
+  <div data-role="header"><h1>处理失败</h1></div>
+  <div role="main" class="ui-content">
+    <p>系统未能完成请求。底层解析器或推理引擎返回：</p>
+    <pre>{{.}}</pre>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首页</a></li>
+      <li><a href="/carneades/help" data-icon="info">帮助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隐私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">声明</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>
