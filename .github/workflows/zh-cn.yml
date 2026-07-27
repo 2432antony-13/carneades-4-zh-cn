@@ -1,0 +1,27 @@
+name: zh-CN foundation
+
+on:
+  push:
+    branches:
+      - feature/zh-cn-foundation
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  localization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26.x"
+          cache: true
+      - name: Build command
+        run: go build -o bin/carneades ./src/cmd/carneades
+      - name: Run focused tests
+        run: go test -vet=off ./src/cmd/carneades ./src/engine/caes/encoding/yaml
+      - name: Validate Chinese example
+        run: ./bin/carneades check -f yaml examples/AGs/YAML/zh-CN/电子数据真实性.yml

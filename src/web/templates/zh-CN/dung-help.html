@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades {{.Version}} Dung 框架帮助</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="DungHelpPage">
+  <div data-role="header"><h1>Dung 抽象论证框架帮助</h1></div>
+  <div role="main" class="ui-content">
+    <p>Dung 框架只保留“论证”和“攻击”关系，不直接表示自然语言前提、证明责任或法律规则。</p>
+    <h2>TGF 输入</h2>
+    <p>TGF 文件先列出论证节点，再使用 `#` 分隔，随后逐行列出攻击关系。示例见
+      <a href="https://github.com/carneades/carneades-4/tree/master/examples/AFs/TGF">上游 TGF 示例</a>。</p>
+    <h2>语义</h2>
+    <ul>
+      <li>Grounded：唯一、保守的扩展；</li>
+      <li>Complete：所有完整扩展；</li>
+      <li>Preferred：极大的可接受论证集合；</li>
+      <li>Stable：攻击扩展外所有论证的集合，可能不存在。</li>
+    </ul>
+    <h2>输出</h2>
+    <p>文本输出列出扩展；GraphML、DOT、PNG 和 SVG 用于查看图结构。图中的绿色节点表示被选入展示扩展的论证。</p>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首页</a></li>
+      <li><a href="/carneades/dung-help" class="ui-btn-active" data-icon="info">帮助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隐私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">声明</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>

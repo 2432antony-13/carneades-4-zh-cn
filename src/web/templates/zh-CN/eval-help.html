@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades {{.Version}} 论证图帮助</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="EvalHelpPage">
+  <div data-role="header"><h1>结构化论证图帮助</h1></div>
+  <div role="main" class="ui-content">
+    <h2>输入格式</h2>
+    <p><strong>YAML</strong> 是 Carneades 4 的原生格式，能够表示陈述、争点、支持和反对论证、假设、论证型式、权重函数及测试预期。</p>
+    <p>系统还支持 AIF、AGXML、CAF 和 LKIF。不同格式的表达能力并不完全相同。</p>
+    <h2>输出格式</h2>
+    <ul>
+      <li>YAML：包含计算后的标签与权重，适合复核和再次处理；</li>
+      <li>GraphML：适合使用 yEd 等图形工具查看；</li>
+      <li>DOT：Graphviz 的文本图格式；</li>
+      <li>PNG、SVG：由 Graphviz 生成的图像。</li>
+    </ul>
+    <h2>中文使用提示</h2>
+    <p>命题标识符建议使用稳定的 ASCII 名称，把中文放在陈述文本中。这样更便于规则匹配、跨系统交换和版本比较。</p>
+    <p>模型输出只反映当前输入和计算规则。未经来源绑定、法律审查和人工确认的自然语言内容不得作为已确认案件事实。</p>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首页</a></li>
+      <li><a href="/carneades/eval-help" class="ui-btn-active" data-icon="info">帮助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隐私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">声明</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>

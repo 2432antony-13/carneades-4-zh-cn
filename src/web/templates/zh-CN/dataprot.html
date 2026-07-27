@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades 本地化版隐私说明</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="DataProtectionPage">
+  <div data-role="header"><h1>隐私与材料处理说明</h1></div>
+  <div role="main" class="ui-content">
+    <p>本页面说明非官方中文本地化版本的技术边界，不替代实际部署者依法制定的隐私政策。</p>
+    <p>上游 Web 服务接收用户上传的论证图文件，在请求过程中读取并处理内容。当前上传处理路径不会主动把案件材料写入数据库，但服务器、反向代理、托管平台或运维工具仍可能产生访问日志。</p>
+    <p>不得向未经安全评估的公开部署上传真实案件卷宗、个人敏感信息、商业秘密或受保密义务约束的材料。</p>
+    <p>实际部署者应根据适用法律明确处理目的、保存期限、访问权限、日志策略、安全措施和数据主体权利。</p>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首页</a></li>
+      <li><a href="/carneades/help" data-icon="info">帮助</a></li>
+      <li><a href="/carneades/dataprot" class="ui-btn-active" data-icon="info">隐私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">声明</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>

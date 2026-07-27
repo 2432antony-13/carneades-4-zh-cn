@@ -1,0 +1,33 @@
+meta:
+  title: 电子数据真实性教学示例
+  note: >
+    本例仅用于测试中文文本和论证图结构，不对应真实案件，
+    也不构成对电子数据真实性的法律意见。
+
+statements:
+  original_device_available: 已提交生成相关聊天记录的原始设备。
+  hash_consistent: 提取文件的哈希值与核验记录一致。
+  editing_trace_found: 现有检查发现了无法合理解释的编辑痕迹。
+  authentic: 该组聊天记录在本教学模型中获得真实性支持。
+  not_authentic: 该组聊天记录在本教学模型中未获得真实性支持。
+
+issues:
+  authenticity:
+    positions: [authentic, not_authentic]
+    standard: PE
+
+arguments:
+  support_authenticity:
+    conclusion: authentic
+    premises: [original_device_available, hash_consistent]
+  challenge_authenticity:
+    conclusion: not_authentic
+    premises: [editing_trace_found]
+
+assumptions:
+  - original_device_available
+  - hash_consistent
+
+tests:
+  in: [original_device_available, hash_consistent, authentic]
+  out: [editing_trace_found, not_authentic]
