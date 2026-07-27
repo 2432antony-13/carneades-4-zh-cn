@@ -13,7 +13,7 @@
   <div data-role="header"><h1>结构化论证图帮助</h1></div>
   <div role="main" class="ui-content">
     <h2>输入格式</h2>
-    <p><strong>YAML</strong> 是 Carneades 4 的原生格式，能够表示陈述、争点、支持和反对论证、假设、论证型式、权重函数及测试预期。</p>
+    <p><strong>YAML</strong> 是 Carneades 4 的原生格式，能够表示陈述、争点、支持和反对论证、语境预设、论证型式、权重函数及测试预期。</p>
     <p>系统还支持 AIF、AGXML、CAF 和 LKIF。不同格式的表达能力并不完全相同。</p>
     <h2>输出格式</h2>
     <ul>
@@ -24,7 +24,17 @@
     </ul>
     <h2>中文使用提示</h2>
     <p>命题标识符建议使用稳定的 ASCII 名称，把中文放在陈述文本中。这样更便于规则匹配、跨系统交换和版本比较。</p>
+    <p>本研究版先由 S0 来源与事实账本专家建立事实状态，再按程序和证据类型路由到民事、刑事、电子数据等专家模块。当前 Web 服务尚未自动执行该路由，上传者必须先在外部完成核验。</p>
+    <p><code>PE</code>、<code>CCE</code>、<code>BRD</code> 是上游内核中的形式计算标准。尤其 <code>PE</code> 不等同中国民事“高度可能性”，现有 <code>BRD</code> 也不等同中国刑事“证据确实、充分并排除合理怀疑”。</p>
     <p>模型输出只反映当前输入和计算规则。未经来源绑定、法律审查和人工确认的自然语言内容不得作为已确认案件事实。</p>
+    <h2>CLES-MoE 输出顺序</h2>
+    <ol>
+      <li>已核验事实及来源；</li>
+      <li>当事人主张与争议事实；</li>
+      <li>缺失事实和待回答问题；</li>
+      <li>适用规则、正反论证和形式结果；</li>
+      <li>人工确认点与使用边界。</li>
+    </ol>
   </div>
   <div data-role="footer" data-id="main-footer" data-position="fixed">
     <div data-role="navbar"><ul>

@@ -12,14 +12,15 @@
 <div data-role="page" id="HelpPage">
   <div data-role="header"><h1>使用帮助</h1></div>
   <div role="main" class="ui-content">
-    <p>Carneades 用于评估、计算和可视化结构化论证图及 Dung 抽象论证框架。</p>
+    <p>本研究版采用“神经模型提出候选、法律专家路由、事实门核验、Carneades 计算、人工负责”的分层结构。</p>
     <dl>
       <dt><a href="/carneades/eval-help">结构化论证图</a></dt>
-      <dd>导入论证图，进行推理评估并导出结果。</dd>
+      <dd>导入已经过事实核验的论证图，计算支持、反对、例外和截断关系。</dd>
       <dt><a href="/carneades/dung-help">Dung 论证框架</a></dt>
       <dd>使用 grounded、complete、preferred 或 stable 语义计算扩展。</dd>
     </dl>
-    <p><strong>重要：</strong>`in`、`out` 和 `undecided` 是形式模型状态，不等同于司法事实认定。</p>
+    <p><strong>重要：</strong><code>in</code>、<code>out</code> 和 <code>undecided</code> 是形式模型状态，不等同于司法事实认定。<code>PE</code>、<code>CCE</code>、<code>BRD</code> 也不是中国证明标准的直接实现。</p>
+    <p>任何模型抽取内容都应先进入事实账本并标为“候选”，经来源定位和人工确认后才能作为已接受输入。</p>
     <p>项目资料：<a href="https://github.com/2432antony-13/carneades-4-zh-cn">中文本地化仓库</a>；
       <a href="https://github.com/carneades/carneades-4">官方上游仓库</a>。</p>
   </div>

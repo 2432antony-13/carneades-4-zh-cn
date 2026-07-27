@@ -1,0 +1,35 @@
+meta:
+  title: CLES-MoE 路由契约示例
+  status: research-draft
+  version: "0.1"
+
+task:
+  jurisdiction: CN
+  procedure: civil
+  stage: evidence_review
+  issue_type: electronic_data_authenticity
+  evidence_types:
+    - electronic_data
+
+routing:
+  required_experts:
+    - S0_source_and_fact_ledger
+    - E1_cn_civil_evidence
+    - E3_electronic_data
+    - S1_citation_and_audit
+  suggested_experts:
+    - E6_corroboration_and_alternatives
+  rule_reasons:
+    - 民事程序必须检查本证、反证、举证责任和适用证明标准。
+    - 争点涉及电子数据真实性，必须检查来源、系统、提取和完整性。
+  missing_fields: []
+  conflicts: []
+  human_confirmed: false
+
+output_policy:
+  neural_output_status: candidate
+  allow_candidate_as_fact: false
+  require_source_locator: true
+  require_human_confirmation: true
+  preserve_unknown: true
+  expose_hidden_chain_of_thought: false

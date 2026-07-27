@@ -1,0 +1,42 @@
+meta:
+  title: 电子数据真实性事实账本示例
+  status: synthetic-research-example
+
+facts:
+  - fact_id: F001
+    proposition: 已提交生成聊天记录的原始设备。
+    status: verified
+    source_id: SRC001
+    locator: 设备提取笔录第2页
+    asserted_by: 提交方
+    verified_by: 示例复核员
+    note: 仅为合成教学数据。
+
+  - fact_id: F002
+    proposition: 提取文件的完整性校验值与核验记录一致。
+    status: verified
+    source_id: SRC002
+    locator: 校验记录第1项
+    asserted_by: 提交方
+    verified_by: 示例复核员
+    note: 仅为合成教学数据。
+
+  - fact_id: F003
+    proposition: 数据生成和存储所依赖的系统在相关时段正常运行。
+    status: unknown
+    source_id: null
+    locator: null
+    asserted_by: null
+    verified_by: null
+    missing_reason: 未提供系统运行日志。
+
+sources:
+  - source_id: SRC001
+    title: 合成设备提取笔录
+    origin: synthetic
+    hash: null
+  - source_id: SRC002
+    title: 合成完整性校验记录
+    origin: synthetic
+    hash: null
+
