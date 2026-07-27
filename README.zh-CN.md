@@ -51,6 +51,7 @@ go build -o bin/carneades ./src/cmd/carneades
 - [CLES-MoE 中国证据推理架构](docs/zh-CN/中国证据推理架构.md)
 - [中国证据推理 MoE 架构研究报告](research/zh-CN/中国证据推理MoE架构研究报告.md)
 - [研究来源台账](research/zh-CN/研究来源台账.md)
+- [研究贡献与来源说明](research/zh-CN/研究贡献与来源说明.md)
 
 ## 中文示例
 
@@ -62,4 +63,4 @@ go build -o bin/carneades ./src/cmd/carneades
 - 原始许可证：[MPL-2.0](LICENSE)
 - 本地化声明：[NOTICE.zh-CN.md](NOTICE.zh-CN.md)
 
-修改受 MPL-2.0 约束的源文件时，应继续遵守 MPL-2.0。独立中文研究材料如引用论文或法律文件，应使用规范引注，不得复制受版权保护的图表和大段表达。
+修改受 MPL-2.0 约束的源文件时，应继续遵守 MPL-2.0。中文研究材料引用论文或法律文件时，应遵守相应的引注、许可和学术规范。
