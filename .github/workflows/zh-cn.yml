@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/zh-cn-foundation
+      - "research/**"
       - master
   pull_request:
 
