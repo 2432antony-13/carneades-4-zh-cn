@@ -1,8 +1,31 @@
+# Carneades 4 中国证据论证研究版
+
+本分支在 [Carneades 4](https://github.com/carneades/carneades-4) 可废止论证内核基础上，
+完成简体中文界面、中文结构化论证示例和中国证据推理适配研究。
+
+## 当前结论
+
+| 目标 | 状态 | 说明 |
+|---|---|---|
+| 将 Carneades 系统汉化并运行 | 已完成首轮原型 | 可通过 `-l zh-CN` 启动九个中文 Web 页面 |
+| 作为国内证据推理研究模型 | 已形成可演示基础 | 可运行中文电子数据真实性论证图，保留支持、反对和截断关系 |
+| 作为国内实务专家系统使用 | 尚未完成 | 中国证明标准、事实账本、专家路由和法律规则库仍需进入可执行内核 |
+
+建议依次查看：
+
+1. [简体中文说明](README.zh-CN.md)
+2. [中国语境适配范围](docs/zh-CN/汉化范围.md)
+3. [中文电子数据真实性示例](examples/AGs/YAML/zh-CN/电子数据真实性.yml)
+4. [中国证据推理架构研究报告](research/zh-CN/中国证据推理MoE架构研究报告.md)
+
+当前定位是研究与教学原型。形式计算结果不等于证据采信、事实认定或法律意见。
+
+---
+
+## Upstream project
 
 These are the source files of Version 4 of the
 Carneades argumentation system, written in the Go programming language.
-
-[简体中文说明](README.zh-CN.md)
 
 > This fork adds an independent Simplified Chinese localization. It is not an
 > official release of the Carneades authors or Fraunhofer FOKUS. The original
