@@ -34,3 +34,7 @@ announcements about the further development of this version.
 
 See the INSTALL.md file in the same directory as this README for
 installation instructions.
+
+## 项目管理
+
+[项目章程](PROJECT.md) · [协作规则](AGENTS.md) · [工作流](docs/WORKFLOW.md) · [基线](docs/governance/BASELINE.md) · [验收](docs/governance/QUALITY.md) · [资产](docs/governance/ASSETS.md) · [交接](docs/governance/HANDOVER.md)
