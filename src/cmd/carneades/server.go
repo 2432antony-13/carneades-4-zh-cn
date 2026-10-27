@@ -21,7 +21,8 @@ the HTML templates used by the service
 
 The -l flag ("locale") selects a localized template directory below the
 template directory. Use "en" for the original templates or "zh-CN" for
-the Simplified Chinese localization (default: en).
+Simplified Chinese or "zh-TW" for Traditional Chinese (default: en).
+Users can also change the language in the browser.
 `
 
 func getGoPath() string {

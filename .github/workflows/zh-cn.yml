@@ -22,6 +22,6 @@ jobs:
       - name: Build command
         run: go build -o bin/carneades ./src/cmd/carneades
       - name: Run focused tests
-        run: go test -vet=off ./src/cmd/carneades ./src/engine/caes/encoding/yaml
+        run: go test -vet=off ./src/cmd/carneades ./src/engine/caes/encoding/yaml ./src/web
       - name: Validate Chinese example
         run: ./bin/carneades check -f yaml examples/AGs/YAML/zh-CN/电子数据真实性.yml

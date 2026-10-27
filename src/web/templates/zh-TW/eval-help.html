@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades {{.Version}} 論證圖幫助</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="/carneades/assets/tony.svg">
+</head>
+<body>
+
+<div data-role="page" id="EvalHelpPage">
+<nav aria-label="Language" style="padding:10px;text-align:center;background:#f7f3ec;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap">
+<img src="/carneades/assets/tony.svg" alt="Tony 24" width="40" height="40"><a data-ajax="false" href="?lang=zh-CN" lang="zh-CN">简体中文</a> ·
+<a data-ajax="false" href="?lang=zh-TW" lang="zh-TW">繁體中文</a> ·
+<a data-ajax="false" href="?lang=en" lang="en">English</a></nav>
+  <div data-role="header"><h1>結構化論證圖幫助</h1></div>
+  <div role="main" class="ui-content">
+    <h2>輸入格式</h2>
+    <p><strong>YAML</strong> 是 Carneades 4 的原生格式，能夠表示陳述、爭點、支援和反對論證、假設、論證型式、權重函式及測試預期。</p>
+    <p>系統還支援 AIF、AGXML、CAF 和 LKIF。不同格式的表達能力並不完全相同。</p>
+    <h2>輸出格式</h2>
+    <ul>
+      <li>YAML：包含計算後的標籤與權重，適合複核和再次處理；</li>
+      <li>GraphML：適合使用 yEd 等圖形工具檢視；</li>
+      <li>DOT：Graphviz 的文字圖格式；</li>
+      <li>PNG、SVG：由 Graphviz 生成的影象。</li>
+    </ul>
+    <h2>中文使用提示</h2>
+    <p>命題識別符號建議使用穩定的 ASCII 名稱，把中文放在陳述文字中。這樣更便於規則匹配、跨系統交換和版本比較。</p>
+    <p>模型輸出只反映當前輸入和計算規則。未經來源繫結、法律審查和人工確認的自然語言內容不得作為已確認案件事實。</p>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首頁</a></li>
+      <li><a href="/carneades/eval-help" class="ui-btn-active" data-icon="info">幫助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隱私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">宣告</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>

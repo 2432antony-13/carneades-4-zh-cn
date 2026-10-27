@@ -82,7 +82,8 @@ func exportArgGraph(ag *caes.ArgGraph, w http.ResponseWriter, outputFormat strin
 	return nil
 }
 
-func CarneadesServer(port string, templatesDir string) {
+func newServerHandler(templatesDir string) http.Handler {
+	mux := http.NewServeMux()
 
 	root := "/carneades"
 
@@ -386,20 +387,57 @@ func CarneadesServer(port string, templatesDir string) {
 		}
 	}
 
-	http.Handle(root+"/", newTemplateHandler(templatesDir, "carneades.html"))
-	http.Handle(root+"/help", newTemplateHandler(templatesDir, "help.html"))
-	http.Handle(root+"/dataprot", newTemplateHandler(templatesDir, "dataprot.html"))
-	http.Handle(root+"/eval-form", newTemplateHandler(templatesDir, "eval-form.html"))
-	http.Handle(root+"/eval-help", newTemplateHandler(templatesDir, "eval-help.html"))
-	http.HandleFunc(root+"/eval", evalHandler)
-	http.Handle(root+"/dung-form", newTemplateHandler(templatesDir, "dung-form.html"))
-	http.Handle(root+"/dung-help", newTemplateHandler(templatesDir, "dung-help.html"))
-	http.HandleFunc(root+"/dung", dungHandler)
-	http.Handle(root+"/imprint", newTemplateHandler(templatesDir, "imprint.html"))
-	http.HandleFunc(root+"/eval-arg-graph", evalArgGraphHandler)
+	mux.Handle(root+"/", newTemplateHandler(templatesDir, "carneades.html"))
+	mux.Handle(root+"/help", newTemplateHandler(templatesDir, "help.html"))
+	mux.Handle(root+"/dataprot", newTemplateHandler(templatesDir, "dataprot.html"))
+	mux.Handle(root+"/eval-form", newTemplateHandler(templatesDir, "eval-form.html"))
+	mux.Handle(root+"/eval-help", newTemplateHandler(templatesDir, "eval-help.html"))
+	mux.HandleFunc(root+"/eval", evalHandler)
+	mux.Handle(root+"/dung-form", newTemplateHandler(templatesDir, "dung-form.html"))
+	mux.Handle(root+"/dung-help", newTemplateHandler(templatesDir, "dung-help.html"))
+	mux.HandleFunc(root+"/dung", dungHandler)
+	mux.Handle(root+"/imprint", newTemplateHandler(templatesDir, "imprint.html"))
+	mux.HandleFunc(root+"/eval-arg-graph", evalArgGraphHandler)
 
-	// start the web server
-	if err := http.ListenAndServe(":"+port, nil); err != nil {
+	return mux
+}
+
+// LocalizedHandler serves all three interface languages while preserving the
+// selected language across form submissions and navigation with a cookie.
+func LocalizedHandler(templatesDir string) http.Handler {
+	defaultLocale := "en"
+	base := filepath.Clean(templatesDir)
+	if name := filepath.Base(base); name == "zh-CN" || name == "zh-TW" {
+		defaultLocale = name
+		base = filepath.Dir(base)
+	}
+	assets := http.StripPrefix("/carneades/assets/", http.FileServer(http.Dir(filepath.Join(base, "assets"))))
+	handlers := map[string]http.Handler{
+		"en":    newServerHandler(base),
+		"zh-CN": newServerHandler(filepath.Join(base, "zh-CN")),
+		"zh-TW": newServerHandler(filepath.Join(base, "zh-TW")),
+	}
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if strings.HasPrefix(r.URL.Path, "/carneades/assets/") {
+			assets.ServeHTTP(w, r)
+			return
+		}
+		locale := defaultLocale
+		if cookie, err := r.Cookie("carneades-language"); err == nil && handlers[cookie.Value] != nil {
+			locale = cookie.Value
+		}
+		if requested := r.URL.Query().Get("lang"); handlers[requested] != nil {
+			locale = requested
+			http.SetCookie(w, &http.Cookie{Name: "carneades-language", Value: locale, Path: "/carneades", MaxAge: 31536000, SameSite: http.SameSiteLaxMode, HttpOnly: true, Secure: r.TLS != nil})
+		}
+		w.Header().Set("Content-Language", locale)
+		w.Header().Add("Vary", "Cookie")
+		handlers[locale].ServeHTTP(w, r)
+	})
+}
+
+func CarneadesServer(port string, templatesDir string) {
+	if err := http.ListenAndServe(":"+port, LocalizedHandler(templatesDir)); err != nil {
 		log.Fatal("carneades:", err)
 	}
 }

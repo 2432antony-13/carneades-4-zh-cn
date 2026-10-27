@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades {{.Version}} 論證圖評估</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="/carneades/assets/tony.svg">
+</head>
+<body>
+
+<div data-role="page" id="EvalForm">
+<nav aria-label="Language" style="padding:10px;text-align:center;background:#f7f3ec;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap">
+<img src="/carneades/assets/tony.svg" alt="Tony 24" width="40" height="40"><a data-ajax="false" href="?lang=zh-CN" lang="zh-CN">简体中文</a> ·
+<a data-ajax="false" href="?lang=zh-TW" lang="zh-TW">繁體中文</a> ·
+<a data-ajax="false" href="?lang=en" lang="en">English</a></nav>
+  <div data-role="header"><h1>評估結構化論證圖</h1></div>
+  <div role="main" class="ui-content">
+    <p>上傳結構化論證圖，系統將依據圖中前提、論證、爭點和證明標準進行評估，並按所選格式輸出。</p>
+    <p>初次使用建議選擇
+      <a href="https://github.com/2432antony-13/carneades-4-zh-cn/tree/master/examples/AGs/YAML">YAML 示例</a>。
+      中文教學示例位於 `examples/AGs/YAML/zh-CN`。詳細說明見
+      <a href="/carneades/eval-help">幫助頁</a>。</p>
+    <form action="/carneades/eval" enctype="multipart/form-data" target="_blank" data-ajax="false" method="post">
+      <label for="datafile">論證圖檔案：</label>
+      <input id="datafile" type="file" name="datafile" size="40">
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>輸入格式：</legend>
+        <input name="input-format" id="agxml" value="agxml" type="radio"><label for="agxml">AGXML</label>
+        <input name="input-format" id="aif" value="aif" type="radio"><label for="aif">AIF</label>
+        <input name="input-format" id="caf" value="caf" type="radio"><label for="caf">CAF</label>
+        <input name="input-format" id="lkif" value="lkif" type="radio"><label for="lkif">LKIF</label>
+        <input name="input-format" id="yamli" value="yaml" checked="checked" type="radio"><label for="yamli">YAML</label>
+      </fieldset>
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>輸出格式：</legend>
+        <input name="output-format" id="dot" value="dot" type="radio"><label for="dot">DOT</label>
+        <input name="output-format" id="graphml" value="graphml" type="radio"><label for="graphml">GraphML</label>
+        <input name="output-format" id="png" value="png" type="radio"><label for="png">PNG</label>
+        <input name="output-format" id="svg" value="svg" checked="checked" type="radio"><label for="svg">SVG</label>
+        <input name="output-format" id="yamlo" value="yaml" type="radio"><label for="yamlo">YAML</label>
+      </fieldset>
+      <button class="ui-shadow ui-btn ui-corner-all" type="submit" id="submit-eval">開始評估</button>
+    </form>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首頁</a></li>
+      <li><a href="/carneades/eval-help" data-icon="info">幫助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隱私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">宣告</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>
