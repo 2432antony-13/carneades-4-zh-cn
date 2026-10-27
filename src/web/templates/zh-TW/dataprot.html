@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades 本地化版隱私說明</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="/carneades/assets/tony.svg">
+</head>
+<body>
+
+<div data-role="page" id="DataProtectionPage">
+<nav aria-label="Language" style="padding:10px;text-align:center;background:#f7f3ec;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap">
+<img src="/carneades/assets/tony.svg" alt="Tony 24" width="40" height="40"><a data-ajax="false" href="?lang=zh-CN" lang="zh-CN">简体中文</a> ·
+<a data-ajax="false" href="?lang=zh-TW" lang="zh-TW">繁體中文</a> ·
+<a data-ajax="false" href="?lang=en" lang="en">English</a></nav>
+  <div data-role="header"><h1>隱私與材料處理說明</h1></div>
+  <div role="main" class="ui-content">
+    <p>本頁面說明非官方中文字地化版本的技術邊界，不替代實際部署者依法制定的隱私政策。</p>
+    <p>上游 Web 服務接收使用者上傳的論證圖檔案，在請求過程中讀取並處理內容。當前上傳處理路徑不會主動把案件材料寫入資料庫，但伺服器、反向代理、託管平臺或運維工具仍可能產生訪問日誌。</p>
+    <p>不得向未經安全評估的公開部署上傳真實案件卷宗、個人敏感資訊、商業秘密或受保密義務約束的材料。</p>
+    <p>實際部署者應根據適用法律明確處理目的、儲存期限、訪問許可權、日誌策略、安全措施和資料主體權利。</p>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首頁</a></li>
+      <li><a href="/carneades/help" data-icon="info">幫助</a></li>
+      <li><a href="/carneades/dataprot" class="ui-btn-active" data-icon="info">隱私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">宣告</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>

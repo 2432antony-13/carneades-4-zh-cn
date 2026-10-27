@@ -1,0 +1,31 @@
+# 三语与 Tony 24 / Languages and identity
+
+本轮语言：`zh-CN`、`zh-TW`、`en`。网页顶部切换；分享链接可使用 `?lang=zh-CN`、`?lang=zh-TW`、`?lang=en`。选择通过本地浏览器保存；Carneades 使用 Cookie。浏览器禁用存储时当前页面仍可切换。
+
+Languages: `zh-CN`, `zh-TW`, `en`. Use the controls at the top or a `?lang=` link. Preferences stay in the local browser; Carneades uses a cookie. Storage is optional for switching the current page.
+
+## 覆盖 / Coverage
+
+Web 首页、论证图与 Dung 表单、帮助、错误页外框、隐私与声明。
+
+Web home, argument-graph and Dung forms, help, error-page labels, privacy and imprint.
+
+## 原文边界 / Original content
+
+用户论证文本、引擎诊断、CLI 和上游资料保留原文；本地化不改变论证结果。
+
+User arguments, engine diagnostics, the CLI and upstream materials retain their source language; localization does not change reasoning results.
+
+## 标识 / Identity
+
+用户选择 B「24 印记」，结合 Q 版 Tony：圆框眼镜、短发、笑脸、挥手、24 角标和 Tony 署名。概念角色不是照片复刻。每仓有独立配色与项目徽章。
+
+The selected “24 seal” combines an original chibi Tony character, round glasses, short hair, a wave, a 24 corner mark and a Tony signature. Each project has its own colour and badge.
+
+- [SVG/CSS](assets/tony.svg) — 网页动画，支持减少动态 / web animation with reduced-motion support.
+- [静态 SVG / Static SVG](assets/tony-static.svg).
+- [GIF](assets/tony.gif) — 32 帧、4.8 秒循环 / 32 frames, 4.8-second loop, rendered from the same CSS animation for GitHub.
+
+法规翻译、模型正确性、外部部署和人工验收分别记录。此文不把本地构建视为生产验收。
+
+Legal translation, model correctness, deployment and human acceptance are separate checks. A local build does not establish production acceptance.

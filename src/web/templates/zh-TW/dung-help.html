@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <title>Carneades {{.Version}} Dung 框架幫助</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="icon" type="image/svg+xml" href="/carneades/assets/tony.svg">
+</head>
+<body>
+
+<div data-role="page" id="DungHelpPage">
+<nav aria-label="Language" style="padding:10px;text-align:center;background:#f7f3ec;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap">
+<img src="/carneades/assets/tony.svg" alt="Tony 24" width="40" height="40"><a data-ajax="false" href="?lang=zh-CN" lang="zh-CN">简体中文</a> ·
+<a data-ajax="false" href="?lang=zh-TW" lang="zh-TW">繁體中文</a> ·
+<a data-ajax="false" href="?lang=en" lang="en">English</a></nav>
+  <div data-role="header"><h1>Dung 抽象論證框架幫助</h1></div>
+  <div role="main" class="ui-content">
+    <p>Dung 框架只保留“論證”和“攻擊”關係，不直接表示自然語言前提、證明責任或法律規則。</p>
+    <h2>TGF 輸入</h2>
+    <p>TGF 檔案先列出論證節點，再使用 `#` 分隔，隨後逐行列出攻擊關係。示例見
+      <a href="https://github.com/carneades/carneades-4/tree/master/examples/AFs/TGF">上游 TGF 示例</a>。</p>
+    <h2>語義</h2>
+    <ul>
+      <li>Grounded：唯一、保守的擴充套件；</li>
+      <li>Complete：所有完整擴充套件；</li>
+      <li>Preferred：極大的可接受論證集合；</li>
+      <li>Stable：攻擊擴充套件外所有論證的集合，可能不存在。</li>
+    </ul>
+    <h2>輸出</h2>
+    <p>文字輸出列出擴充套件；GraphML、DOT、PNG 和 SVG 用於檢視圖結構。圖中的綠色節點表示被選入展示擴充套件的論證。</p>
+  </div>
+  <div data-role="footer" data-id="main-footer" data-position="fixed">
+    <div data-role="navbar"><ul>
+      <li><a href="/carneades/" data-icon="home">首頁</a></li>
+      <li><a href="/carneades/dung-help" class="ui-btn-active" data-icon="info">幫助</a></li>
+      <li><a href="/carneades/dataprot" data-icon="info">隱私</a></li>
+      <li><a href="/carneades/imprint" data-icon="info">宣告</a></li>
+    </ul></div>
+  </div>
+</div>
+</body>
+</html>
