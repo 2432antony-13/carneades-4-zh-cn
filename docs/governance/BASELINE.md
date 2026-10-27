@@ -25,3 +25,7 @@
 ## 上游管理
 
 父仓为 carneades/carneades-4；本地 origin 指向本 fork。同步前固定上游提交与本地版本，分别检查术语/模板、中文示例和引擎变化，运行局部回归后经 PR 集成。本轮没有同步上游或建立新的源码远端。
+
+## 平台接入更新（2026-10-27）
+
+上文是治理启动时快照。当前账号已具备 project/workflow，任务状态统一在[私有管理看板](https://github.com/users/2432antony-13/projects/1)的 Status 字段维护，阻塞使用 Blocked / Blocker 字段；Issue 正文保留验收与解除条件。旧 status/blocked 标签停止作为状态源。 本轮 PR 及运行结果在关联任务中记录，私有仓套餐限制与产品验收继续单列。

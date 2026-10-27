@@ -7,5 +7,5 @@
 - 沿用现有 CI Go 1.26.x：`go build -o bin/carneades ./src/cmd/carneades`；`go test -vet=off ./src/cmd/carneades ./src/engine/caes/encoding/yaml`；`./bin/carneades check -f yaml examples/AGs/YAML/zh-CN/电子数据真实性.yml`。-vet=off 是现有局部测试约定，不代表全仓 vet 通过；图形输出可能另需 Graphviz。
 - 行为改变覆盖原失败条件；文档改动检查事实、链接和差异。未知结果不得填“通过”。
 - 保留上游历史、来源与 MPL-2.0 标识；中文翻译、示例和引擎改动分别记载；形式论证结果不冒充业务事实或司法结论。
-- 任务状态用一个 status 标签，阻塞单列；PR 引用任务。合并、部署、用户验收分别记录，不自动关闭尚未满足交付验收的任务。
+- 任务状态统一在[私有管理看板](https://github.com/users/2432antony-13/projects/1)的 Status 字段维护，阻塞使用 Blocked / Blocker 字段；Issue 正文保留验收与解除条件。旧 status/blocked 标签停止作为状态源。 PR 引用任务。合并、部署、用户验收分别记录，不自动关闭尚未满足交付验收的任务。
 - 交接保留来源 SHA、命令/运行、输入输出范围、限制和下一动作。自查不称独立批准。
