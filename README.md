@@ -1,42 +1,33 @@
+**简体中文** · [繁體中文](docs/i18n/README.zh-TW.md) · [English](docs/i18n/README.en.md)
 
-These are the source files of Version 4 of the
-Carneades argumentation system, written in the Go programming language.
+# Carneades · 中文适配
 
-[简体中文说明](README.zh-CN.md)
+**让论点、依据与反驳可以被检验。**
 
-> This fork adds an independent Simplified Chinese localization. It is not an
-> official release of the Carneades authors or Fraunhofer FOKUS. The original
-> project history and MPL-2.0 license are preserved.
+Carneades 4 的独立中文适配分支，保留形式论证引擎、上游历史与可追溯的中文示例。
 
-This source code is subject to the terms of the Mozilla Public
-License, version 2.0 (MPL-2.0). If a copy of the MPL was not
-distributed with this software, it is also available online at
-<http://mozilla.org/MPL/2.0/>.  For futher information about the MPL see <http://www.mozilla.org/MPL/2.0/FAQ.html>.
+[任务](https://github.com/2432antony-13/carneades-4-zh-cn/issues) · [文档](docs/README.md)
 
-This version of Carneades consists of:
+## 当前状态
 
-- An implementation of a solver for Dung abstract argumentation frameworks,
-using grounded, complete, preferred and stable semantics. Argumentation Frameworks
-can be represented using the [Trivial Graph Format](https://en.wikipedia.org/wiki/Trivial_Graph_Format). The computed extensions can be exported to DOT, GraphML and plain text.
-- An evaluator for structured arguments, based on a new version of the 
-Carneades Argument Evaluation Structures (CAES) formal model of argument. 
-- New features of version 4 of Carneades include:
-    * Support for cyclic argument graphs, cumulative arguments, issue-based information systems (IBIS) and multicriteria decision analysis.
-    * Argument graphs can be represented in AGXML, AIF, LKIF, CAF and YAML and exported to DOT, GraphML, PNG, SVG and YAML.
-    * User-definable argument weighing functions, for computing the relative weights of arguments based on their properties, such as the authority or effective date of the argumentation scheme applied, or the labels (in, out, undecided) of premises.  The failure of a premise can weaken or even strengthen an argument without defeating it entirely.
-    * Automatic argument construction by applying argumentation schemes to assumptions, via an inference engine implemented using [Constraint Handling Rules](https://dtai.cs.kuleuven.be/CHR/). 
+命令行与中文示例已接入 CI。它是独立衍生项目，不是原作者或 Fraunhofer FOKUS 的官方中文发行。
 
-Carneades can visualize both Dung abstract argumentation frameworks and CAES argument graphs using [DOT](http://www.graphviz.org/content/dot-language) and [GraphML](https://en.wikipedia.org/wiki/GraphML).  We recommend using the free [yEd](http://www.yworks.com/yed) GraphML editor to view the GraphML files.
+## 快速开始
 
+CI 使用 Go 1.26.x。图形导出可能需要 Graphviz；局部测试的 -vet=off 不代表全仓 vet 通过。
 
-Please see the Carneades blog at <https://carneades.github.io/> for
-announcements about the further development of this version.
+```bash
+go build -o bin/carneades ./src/cmd/carneades
+go test -vet=off ./src/cmd/carneades ./src/engine/caes/encoding/yaml
+./bin/carneades check -f yaml examples/AGs/YAML/zh-CN/电子数据真实性.yml
+```
 
-See the INSTALL.md file in the same directory as this README for
-installation instructions.
+## 能力与范围
 
-## 项目管理
+抽象论证语义；结构化论证评估；YAML 示例检查；图形导出。
 
-[项目章程](PROJECT.md) · [协作规则](AGENTS.md) · [工作流](docs/WORKFLOW.md) · [基线](docs/governance/BASELINE.md) · [验收](docs/governance/QUALITY.md) · [资产](docs/governance/ASSETS.md) · [交接](docs/governance/HANDOVER.md)
+保留 MPL-2.0 及上游归属。形式推理结果不等于业务事实或司法结论。
 
-当前任务状态与阻塞统一维护在[私有管理看板](https://github.com/users/2432antony-13/projects/1)；各仓 Issue 保存问题、验收与证据。
+[源码](src/) · [文档](docs/README.md)
+
+当前首页和使用入口提供三语；各产品界面的语言覆盖单独记录，不以文档翻译代替产品本地化。

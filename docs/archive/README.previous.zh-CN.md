@@ -41,11 +41,11 @@ go build -o bin/carneades ./src/cmd/carneades
 
 更多说明：
 
-- [中文快速开始](docs/zh-CN/快速开始.md)
-- [中英文术语表](docs/zh-CN/术语表.md)
-- [来源、许可与原创性记录](docs/zh-CN/来源与许可.md)
-- [汉化范围与未完成事项](docs/zh-CN/汉化范围.md)
-- [两日交付清单](docs/zh-CN/两日交付清单.md)
+- [中文快速开始](../zh-CN/快速开始.md)
+- [中英文术语表](../zh-CN/术语表.md)
+- [来源、许可与原创性记录](../zh-CN/来源与许可.md)
+- [汉化范围与未完成事项](../zh-CN/汉化范围.md)
+- [两日交付清单](../zh-CN/两日交付清单.md)
 
 ## 中文示例
 
@@ -54,7 +54,7 @@ go build -o bin/carneades ./src/cmd/carneades
 ## 上游与许可证
 
 - 上游项目：<https://github.com/carneades/carneades-4>
-- 原始许可证：[MPL-2.0](LICENSE)
-- 本地化声明：[NOTICE.zh-CN.md](NOTICE.zh-CN.md)
+- 原始许可证：[MPL-2.0](../../LICENSE)
+- 本地化声明：[NOTICE.zh-CN.md](../NOTICE.zh-CN.md)
 
 修改受 MPL-2.0 约束的源文件时，应继续遵守 MPL-2.0。独立中文研究材料如引用论文或法律文件，应使用规范引注，不得复制受版权保护的图表和大段表达。
